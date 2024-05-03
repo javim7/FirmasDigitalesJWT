@@ -4,8 +4,9 @@ const User = require('./userModel');
 const router = express.Router();
 
 // GET /users
-router.get('/', (req, res) => {
-    res.json({ message: 'Get users' });
+router.get('/', async (req, res) => {
+    const users = await User.find({}).sort({ date_created: -1 })
+    res.status(200).json(users)
 });
 
 // get /users/:username
