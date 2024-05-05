@@ -3,7 +3,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ensure full height */
+    height: 100vh;
+    overflow-y: hidden;
   }
   
   .login-box{
@@ -88,7 +89,7 @@ body {
     width:100%;
     margin-bottom: 10px;
   }
-  .u-form-group input[type="email"],
+  .u-form-group input[type="text"],
   .u-form-group input[type="password"]{
     width: calc(50% - 22px);
     height:45px;
