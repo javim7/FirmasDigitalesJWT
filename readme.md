@@ -7,7 +7,7 @@ Este es un proyecto MERN que implementa un sistema de autenticación basado en J
 ## Instalación
 
 Para ejecutar el proyecto, sigue estos pasos:
-*Asegúrate de tener Node.js instalado en tu sistema antes de ejecutar estos comandos.*
+- *Asegúrate de tener Node.js instalado en tu sistema antes de ejecutar estos comandos.*
 
 ### Cliente
 
