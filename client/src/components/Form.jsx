@@ -35,7 +35,10 @@ const Form = ({ onLoginSuccess }) => {
       setLoginUsername('');
       setLoginPassword('');
       // Call the onLoginSuccess function passed from App.jsx
-      onLoginSuccess();
+      // console.log(loginUsername, loginPassword)
+      console.log(data)
+      localStorage.setItem('token', data.token)
+      onLoginSuccess(data);
     } catch (error) {
       console.error('Error:', error);
       alert(error.message || 'Failed to login');

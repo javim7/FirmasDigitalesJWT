@@ -22,3 +22,17 @@ h1 {
     background-color: #15a13f;
   }
   
+  /* Menu.css */
+.signOutButton {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.signOutButton:hover {
+    background-color: darkred;
+}
