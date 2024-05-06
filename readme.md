@@ -11,7 +11,7 @@ Para ejecutar el proyecto, sigue estos pasos:
 
 ### Cliente
 
-1. Abre una terminal y navega hasta la carpeta `cliente`.
+1. Abre una terminal y navega hasta la carpeta `client`.
 2. Ejecuta `npm install` para instalar las dependencias.
 3. Luego, ejecuta `npm run dev` para iniciar el servidor de desarrollo del cliente.
 
