@@ -37,8 +37,9 @@ const Menu = ({ user, onMenuButtonClick, onSignOut }) => {
 
     return (
         <div className='wrapper'>
-            <h1>Welcome back {user ? user.user : 'Guest'}!</h1>
-            <img className='menuImg' src="https://ras-blogdb.restdb.io/media/5834555ede7a912e00000942" alt="" />
+            <h1>Welcome back {user ? user.user : 'guest'}!</h1>
+            {console.log(user)}
+            {!isAuthenticated && <img className='menuImg' src="https://ras-blogdb.restdb.io/media/5834555ede7a912e00000942" alt="" />}
             <p>Click the button below to acess the protected resource</p>
             <div className='buttonWrapper'>
                 <button onClick={userAuthenticated}>Go to Resource</button>
