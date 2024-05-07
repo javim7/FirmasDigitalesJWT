@@ -38,6 +38,7 @@ const Form = ({ onLoginSuccess }) => {
       // console.log(loginUsername, loginPassword)
       console.log(data)
       localStorage.setItem('token', data.token)
+      localStorage.setItem('user', data.user)
       onLoginSuccess(data);
     } catch (error) {
       console.error('Error:', error);
@@ -123,7 +124,7 @@ const Form = ({ onLoginSuccess }) => {
               >Log in</button>
             </div>
             <div className="u-form-group">
-              <a href="#" className="forgot-password">Forgot password?</a>
+              <a href="#" className="forgot-password" onClick={onLoginSuccess}>Sign In as Guest</a>
             </div>
           </form>
         ) : (

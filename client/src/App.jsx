@@ -18,32 +18,22 @@ function App() {
         });
         const data = await response.json();
         if (response.ok) {
-          // If the user is authenticated, set the current user and component
-          setCurrentUser(data.user);
+          const user = localStorage.getItem('user');
+          setCurrentUser(user);
+          console.log(user);
           setCurrentComponent('Menu');
         } else {
-          // If not authenticated, clear the current user and set the component to 'Form'
           setCurrentUser(null);
           setCurrentComponent('Form');
         }
       } catch (error) {
         console.error('Error:', error);
-        // Handle any errors
+        setCurrentUser(null);
       }
     };
 
     checkUserAuthentication();
   }, []);
-
-  //useEffect print the current user
-  useEffect(() => {
-    console.log(currentUser);
-  }, [currentUser]);
-
-  //useEffect print the current component
-  useEffect(() => {
-    console.log(currentComponent);
-  }, [currentComponent]);
 
   const handleLoginSuccess = (data) => {
     setCurrentUser(data);
@@ -53,6 +43,10 @@ function App() {
   const handleMenuButtonClick = () => {
     setCurrentComponent('Resource');
   };
+
+  const handleResourceButtonClick = () => {
+    setCurrentComponent('Menu');
+  }
 
   const handleSignOut = () => {
     setCurrentUser(null);
@@ -72,7 +66,13 @@ function App() {
           onSignOut={handleSignOut}
           />
         )}
-        {currentComponent === 'Resource' && <Resource />}
+        {currentComponent === 'Resource' && (
+        <Resource 
+        onResourceButtonClick={handleResourceButtonClick}
+        onSignOut={handleSignOut}
+        user={currentUser}
+        />
+        )}
       </div>
     </>
   )
